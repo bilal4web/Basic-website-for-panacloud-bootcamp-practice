@@ -6,7 +6,7 @@ name: Deploy Website
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -28,7 +28,7 @@ jobs:
     - name: Install Surge
       run: npm install -g surge
     - name: Run Surge
-      run: surge ./ bootcampnewapp.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      run: surge ./ panacloud_bootcamp_2020.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
 
 
 
